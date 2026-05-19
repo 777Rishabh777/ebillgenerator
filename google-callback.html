@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P5TZMG4');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign-In | eBillGenerator</title>
+    <meta name="description" content="Google sign-in callback page for eBillGenerator account authentication.">
+    <meta name="author" content="eBillGenerator">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="application-name" content="eBillGenerator">
+    <meta name="apple-mobile-web-app-title" content="eBillGenerator">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Google Sign-In | eBillGenerator">
+    <meta property="og:description" content="Authentication callback for eBillGenerator Google sign-in.">
+    <meta property="og:image" content="https://ebillgenerator.com/favicon.svg">
+    <meta property="og:url" content="https://ebillgenerator.com/google-callback">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Google Sign-In | eBillGenerator">
+    <meta name="twitter:description" content="Authentication callback for eBillGenerator Google sign-in.">
+    <meta name="twitter:image" content="https://ebillgenerator.com/favicon.svg">
+    <link rel="canonical" href="https://ebillgenerator.com/google-callback">
+    <link rel="icon" type="image/svg+xml" href="/billgen-watermark.png">
+    <link rel="shortcut icon" href="/billgen-watermark.png">
+    <link rel="apple-touch-icon" href="/billgen-watermark.png">
+    
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P5TZMG4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div class="text-center p-8">
+        <div class="loader mx-auto mb-4"></div>
+        <h1 class="text-lg font-bold text-slate-800 mb-2">Signing you in...</h1>
+        <p class="text-sm text-slate-500">Please wait while we complete your Google sign-in.</p>
+    </div>
+
+    <script>
+        // Extract access token from URL hash
+        const hash = window.location.hash.substring(1);
+        const params = new URLSearchParams(hash);
+        const accessToken = params.get('access_token');
+        const error = params.get('error');
+
+        if (error) {
+            document.querySelector('h1').textContent = 'Sign-in Failed';
+            document.querySelector('p').textContent = error;
+            document.querySelector('.loader').style.display = 'none';
+        } else if (accessToken) {
+            // Send token back to parent window
+            if (window.opener) {
+                window.opener.postMessage({ googleToken: accessToken }, window.location.origin);
+                window.close();
+            } else {
+                // If no opener, redirect to login page with token
+                window.location.href = '/log_in?google_token=' + accessToken;
+            }
+        } else {
+            document.querySelector('h1').textContent = 'Invalid Response';
+            document.querySelector('p').textContent = 'No access token received from Google.';
+            document.querySelector('.loader').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

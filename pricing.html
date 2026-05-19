@@ -1,0 +1,1262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P5TZMG4');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple &amp; Transparent Pricing | eBillGenerator</title>
+  <meta name="description" content="Is eBillGenerator free? Check out our straightforward pricing. Get access to beautiful invoice templates and unlimited PDF downloads for your business.">
+  <meta name="keywords" content="ebillgenerator pricing, receipt generator pricing, invoice software plans">
+  <meta name="author" content="eBillGenerator.com">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="application-name" content="eBillGenerator.com">
+  <meta name="apple-mobile-web-app-title" content="eBillGenerator.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Simple &amp; Transparent Pricing | eBillGenerator">
+  <meta property="og:description" content="Is eBillGenerator free? Check out our straightforward pricing. Get access to beautiful invoice templates and unlimited PDF downloads for your business.">
+  <meta property="og:image" content="https://www.ebillgenerator.com/billgen-watermark.png">
+  <meta property="og:url" content="https://www.ebillgenerator.com/pricing.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simple &amp; Transparent Pricing | eBillGenerator">
+  <meta name="twitter:description" content="Is eBillGenerator free? Check out our straightforward pricing. Get access to beautiful invoice templates and unlimited PDF downloads for your business.">
+  <meta name="twitter:image" content="https://www.ebillgenerator.com/billgen-watermark.png">
+  <link rel="canonical" href="https://www.ebillgenerator.com/pricing.html">
+  <link rel="icon" type="image/svg+xml" href="/billgen-watermark.png">
+  <link rel="shortcut icon" href="/billgen-watermark.png">
+  <link rel="apple-touch-icon" href="/billgen-watermark.png">
+
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js global build (no ES module import — avoids Vite resolution) -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'float': 'float 3s ease-in-out infinite'
+          },
+          keyframes: {
+            fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="text/css">
+    body {
+      transition: background-color 0.3s ease;
+      scroll-behavior: smooth;
+      background:
+        radial-gradient(circle at 12% 2%, rgba(59, 130, 246, 0.14), transparent 34%),
+        radial-gradient(circle at 88% 8%, rgba(14, 165, 233, 0.12), transparent 36%),
+        linear-gradient(180deg, #f8fbff 0%, #eef6ff 58%, #f8fbff 100%);
+    }
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    #three-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, #1d4ed8, #2563eb, #06b6d4); z-index: 1000; transition: width 0.1s linear; }
+    
+    /* Billing toggle */
+    .toggle-switch { width: 48px; height: 26px; background: #e2e8f0; border-radius: 100px; position: relative; cursor: pointer; transition: background 0.3s; }
+    .dark .toggle-switch { background: #334155; }
+    .toggle-switch.active { background: #3b82f6; }
+    .toggle-knob { width: 20px; height: 20px; background: white; border-radius: 50%; position: absolute; top: 3px; left: 3px; transition: transform 0.3s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+    .toggle-switch.active .toggle-knob { transform: translateX(22px); }
+
+    /* FAQ accordion */
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white font-sans min-h-screen">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P5TZMG4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="bgnav-placeholder"></div>
+
+<script type="module" src="/src/init-nav.js"></script>
+  <script>
+    // Replaced imports
+    (function wn(){if(window.BillGenNav){window.BillGenNav.init({activePage:'pricing'})}else{setTimeout(wn,50)}})();
+  </script>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Three.js Canvas -->
+<canvas id="three-canvas"></canvas>
+
+<!-- ═══════ HERO ═══════ -->
+<header class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-24 text-center animate-fade-in-up">
+  <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 mb-8">
+    <span class="relative flex h-2 w-2">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+    </span>
+    <span class="text-[10px] font-black uppercase tracking-widest text-blue-600">Simple, transparent pricing</span>
+  </div>
+
+  <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter leading-none uppercase">
+    Invest in <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 italic">Efficiency.</span>
+  </h1>
+  <p class="text-slate-500 dark:text-slate-400 text-lg max-w-xl mx-auto italic font-medium tracking-tight mb-8">
+    Every receipt tells a story. From a single bill to thousands—choose the plan that matches your ambition.
+  </p>
+
+  <div class="flex flex-col items-center gap-3 text-slate-400 animate-float">
+    <span class="text-[9px] font-black uppercase tracking-[0.3em]">Scroll to explore</span>
+    <div class="w-px h-10 bg-gradient-to-b from-slate-300 dark:from-slate-600 to-transparent"></div>
+  </div>
+</header>
+
+<!-- ═══════ STORY 1: THE PROBLEM ═══════ -->
+<section class="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center reveal">
+  <p class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-600 mb-6">01 — The Problem</p>
+  <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none mb-6">
+    Manual billing wastes<br>
+    <span class="text-blue-600 italic">4.8 hours</span> every week
+  </h2>
+  <p class="text-slate-500 dark:text-slate-400 text-lg max-w-lg mx-auto leading-relaxed">
+    Small business owners spend nearly 250 hours a year on invoicing,
+    formatting receipts, and chasing paper trails. That's time you'll never get back.
+  </p>
+</section>
+
+<!-- ═══════ STORY 2: THE SOLUTION ═══════ -->
+<section class="relative z-10 max-w-6xl mx-auto px-6 py-24 border-t border-slate-200 dark:border-slate-800 reveal">
+  <div class="text-center mb-16">
+    <p class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-600 mb-6">02 — The Solution</p>
+    <h2 class="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-6">
+      Generate professional bills<br>
+      in <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 italic">seconds</span>
+    </h2>
+    <p class="text-slate-500 dark:text-slate-400 max-w-lg mx-auto font-medium">
+      eBillGenerator automates your entire billing workflow—beautiful templates,
+      instant PDF exports, and smart itemization at your fingertips.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+    <div class="group p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all hover:border-blue-500 shadow-sm hover:shadow-xl hover:scale-105 duration-300">
+      <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 text-2xl group-hover:animate-bounce">⚡</div>
+      <h4 class="font-black uppercase text-xs tracking-widest mb-3">Instant Generation</h4>
+      <p class="text-slate-500 dark:text-slate-400 text-[11px] leading-relaxed">Create polished receipts in under 10 seconds with smart autofill.</p>
+    </div>
+    <div class="group p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all hover:border-blue-500 shadow-sm hover:shadow-xl hover:scale-105 duration-300">
+      <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 text-2xl group-hover:animate-bounce">🎨</div>
+      <h4 class="font-black uppercase text-xs tracking-widest mb-3">Premium Templates</h4>
+      <p class="text-slate-500 dark:text-slate-400 text-[11px] leading-relaxed">Choose from dozens of professionally designed receipt layouts.</p>
+    </div>
+    <div class="group p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all hover:border-blue-500 shadow-sm hover:shadow-xl hover:scale-105 duration-300">
+      <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 text-2xl group-hover:animate-bounce">📊</div>
+      <h4 class="font-black uppercase text-xs tracking-widest mb-3">Tax Ready</h4>
+      <p class="text-slate-500 dark:text-slate-400 text-[11px] leading-relaxed">Auto-calculated taxes, discounts, and totals for every bill.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ STORY 3: THE IMPACT ═══════ -->
+<section class="relative z-10 max-w-5xl mx-auto px-6 py-24 border-t border-slate-200 dark:border-slate-800 text-center reveal">
+  <p class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-600 mb-6">03 — The Impact</p>
+  <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none mb-6">
+    Trusted by <span class="text-blue-600 italic">12,000+</span><br>
+    businesses worldwide
+  </h2>
+  <p class="text-slate-500 dark:text-slate-400 text-lg max-w-lg mx-auto leading-relaxed">
+    From street vendors to enterprise teams—eBillGenerator scales with you.
+    Save time. Look professional. Get paid faster.
+  </p>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mt-12">
+    <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50">
+      <div class="text-3xl font-black text-blue-600 tracking-tighter">12K+</div>
+      <p class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mt-1">Businesses</p>
+    </div>
+    <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50">
+      <div class="text-3xl font-black text-blue-600 tracking-tighter">2M+</div>
+      <p class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mt-1">Bills Generated</p>
+    </div>
+    <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50">
+      <div class="text-3xl font-black text-blue-600 tracking-tighter">99.9%</div>
+      <p class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mt-1">Uptime</p>
+    </div>
+    <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50">
+      <div class="text-3xl font-black text-blue-600 tracking-tighter">4.9★</div>
+      <p class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mt-1">User Rating</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PRICING ═══════ -->
+<section class="relative z-10 max-w-6xl mx-auto px-6 py-24 border-t border-slate-200 dark:border-slate-800 reveal" id="pricing">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
+      Choose Your <span class="text-blue-600 italic">Plan</span>
+    </h2>
+    <p class="text-slate-500 dark:text-slate-400 max-w-md mx-auto font-medium">
+      Start free. Upgrade when you're ready. No surprises, cancel anytime.
+    </p>
+  </div>
+
+  <!-- Toggle -->
+  <div class="flex items-center justify-center gap-4 mb-12">
+    <span class="text-xs font-black uppercase tracking-widest transition-colors" id="monthlyLabel" style="color: var(--tw-text-opacity,1); --tw-text-opacity:1;">Monthly</span>
+    <div class="toggle-switch" id="billingToggle" onclick="toggleBilling()">
+      <div class="toggle-knob"></div>
+    </div>
+    <span class="text-xs font-black uppercase tracking-widest text-slate-400" id="annualLabel">Annual</span>
+    <span id="offerBadge" class="px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-[10px] font-black uppercase tracking-widest text-green-600">Save 20%</span>
+  </div>
+
+  <!-- Offer Countdown Timer -->
+  <div id="offerCountdown" class="text-center mb-8 hidden">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
+      <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span class="text-xs font-bold text-red-600" id="countdownText">Offer ends soon!</span>
+    </div>
+  </div>
+
+  <!-- Pricing Cards Container (Dynamically Generated) -->
+  <div id="pricing-cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <!-- Loading State -->
+    <div class="col-span-full text-center py-16">
+      <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      <p class="mt-4 text-slate-500 text-sm">Loading pricing plans...</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA BANNER ═══════ -->
+<section class="relative z-10 max-w-6xl mx-auto px-6 mb-24 reveal">
+  <div class="bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-600 rounded-[3rem] p-10 md:p-16 overflow-hidden relative shadow-2xl shadow-blue-500/30">
+    <div class="relative z-10 max-w-2xl">
+      <span class="bg-blue-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-6 inline-block animate-pulse">Limited Offer</span>
+      <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-6">
+        Get <span class="italic text-cyan-100">3 Months Free</span> on Annual Plans
+      </h2>
+      <p class="text-slate-300 dark:text-blue-50 text-sm leading-relaxed mb-8">
+        Switch to annual billing today and unlock 3 extra months at no cost. That's 15 months of professional billing for the price of 12.
+      </p>
+      <a href="/" class="inline-block bg-white text-slate-900 px-8 py-4 rounded-2xl font-black uppercase text-xs tracking-widest hover:bg-blue-50 transition-all hover:scale-105 shadow-xl no-underline">
+        Claim Your Offer →
+      </a>
+    </div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-500/20 to-transparent pointer-events-none"></div>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="relative z-10 max-w-3xl mx-auto px-6 py-24 border-t border-slate-200 dark:border-slate-800 reveal" id="faq">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-black tracking-tighter uppercase mb-4">
+      Frequently <span class="text-blue-600 italic">Asked</span>
+    </h2>
+    <p class="text-slate-500 dark:text-slate-400 font-medium">Everything you need to know about our plans.</p>
+  </div>
+
+  <div class="space-y-3">
+    <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition-all hover:border-blue-200 dark:hover:border-blue-800">
+      <div class="faq-q flex justify-between items-center px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+        <span class="font-black text-xs uppercase tracking-tight">Can I switch plans later?</span>
+        <span class="faq-arrow text-slate-400 text-xs transition-transform duration-300">▼</span>
+      </div>
+      <div class="faq-a"><div class="px-6 pb-5 text-slate-500 text-[11px] leading-relaxed">Absolutely. You can upgrade or downgrade your plan at any time. Changes take effect immediately and we'll prorate your billing.</div></div>
+    </div>
+
+    <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition-all hover:border-blue-200 dark:hover:border-blue-800">
+      <div class="faq-q flex justify-between items-center px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+        <span class="font-black text-xs uppercase tracking-tight">Is there a free trial for Pro?</span>
+        <span class="faq-arrow text-slate-400 text-xs transition-transform duration-300">▼</span>
+      </div>
+      <div class="faq-a"><div class="px-6 pb-5 text-slate-500 text-[11px] leading-relaxed">Yes! Every Pro plan starts with a 14-day free trial. No credit card required. Experience the full feature set risk-free.</div></div>
+    </div>
+
+    <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition-all hover:border-blue-200 dark:hover:border-blue-800">
+      <div class="faq-q flex justify-between items-center px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+        <span class="font-black text-xs uppercase tracking-tight">What payment methods do you accept?</span>
+        <span class="faq-arrow text-slate-400 text-xs transition-transform duration-300">▼</span>
+      </div>
+      <div class="faq-a"><div class="px-6 pb-5 text-slate-500 text-[11px] leading-relaxed">We accept all major credit and debit cards, UPI, net banking, and wallets. Enterprise plans can also pay via invoice.</div></div>
+    </div>
+
+    <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition-all hover:border-blue-200 dark:hover:border-blue-800">
+      <div class="faq-q flex justify-between items-center px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+        <span class="font-black text-xs uppercase tracking-tight">Can I cancel anytime?</span>
+        <span class="faq-arrow text-slate-400 text-xs transition-transform duration-300">▼</span>
+      </div>
+      <div class="faq-a"><div class="px-6 pb-5 text-slate-500 text-[11px] leading-relaxed">Yes, no lock-in contracts. Cancel anytime from your dashboard. You'll continue to have access until the end of your billing period.</div></div>
+    </div>
+
+    <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition-all hover:border-blue-200 dark:hover:border-blue-800">
+      <div class="faq-q flex justify-between items-center px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+        <span class="font-black text-xs uppercase tracking-tight">Do you offer refunds?</span>
+        <span class="faq-arrow text-slate-400 text-xs transition-transform duration-300">▼</span>
+      </div>
+      <div class="faq-a"><div class="px-6 pb-5 text-slate-500 text-[11px] leading-relaxed">We offer a full refund within the first 7 days of any paid plan. After that, you can cancel and your plan remains active until the period ends.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FINAL CTA ═══════ -->
+<section class="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center reveal">
+  <h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none mb-6">
+    Ready to start<br>
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 italic">billing smarter?</span>
+  </h2>
+  <p class="text-slate-500 dark:text-slate-400 text-lg max-w-md mx-auto mb-10">
+    Join thousands of businesses generating professional bills in seconds.
+  </p>
+  <a href="/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-black uppercase text-sm tracking-widest transition-all hover:scale-105 shadow-xl shadow-blue-500/20 no-underline active:scale-95">
+    Open eBillGenerator →
+  </a>
+</section>
+
+<!-- ═══════ FOOTER (matches index.html) ═══════ -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-20 pb-8">
+  <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
+
+        <div class="space-y-6">
+          <img src="/billgen-watermark.png" class="h-16 scale-[1.15] md:h-20 origin-left w-auto object-contain">
+          <p class="text-slate-500 text-xs leading-relaxed font-medium">
+            For educational/personal use only. Illegal use or fraud is strictly prohibited. Users assume all legal
+            responsibility; developers are not liable for any misuse. </p>
+          <div class="flex items-center gap-2">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span class="text-[9px] font-black uppercase tracking-widest text-slate-400">Systems Operational</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900 dark:text-white">Product</h4>
+          <ul class="space-y-4">
+            <li><a href="/templates?bill=fuel"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Fuel
+                Generator</a></li>
+            <li><a href="/templates?bill=rent"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Rent
+                Receipts</a></li>
+            <li><a href="/templates?bill=lta"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">LTA
+                Templates</a></li>
+            <li><a href="/templates?bill=invoice"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Custom
+                GST Invoice</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900 dark:text-white">Company</h4>
+          <ul class="space-y-4">
+            <li><a href="about.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">About
+                Us</a></li>
+            <li><a href="privacypolicy.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Privacy
+                Policy</a></li>
+            <li><a href="termsofuse.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Terms
+                of Use</a></li>
+            <li><a href="refundpolicy.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Refund
+                Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900 dark:text-white">Contact</h4>
+          <ul class="space-y-4">
+            <li><a href="mailto:info@ebillgenerator.com"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                info@ebillgenerator.com
+              </a></li>
+            <li><span class="text-[11px] font-bold text-slate-400 uppercase tracking-tight">Support: 24/7</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900 dark:text-white">Newsletter</h4>
+          <p class="text-[10px] text-slate-500 mb-4 font-medium uppercase tracking-tighter">Get product updates & new
+            templates.</p>
+          <div class="flex gap-2">
+            <input type="email" placeholder="EMAIL"
+              class="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2 text-[10px] focus:outline-none focus:ring-2 ring-blue-500 w-full font-bold">
+            <button
+              class="bg-blue-600 text-white p-2 rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div
+        class="pt-8 border-t border-slate-100 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+          © 2026 eBillGenerator.com • All Rights Reserved
+        </p>
+
+        <div class="flex gap-6">
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition hover:scale-110">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+            </svg>
+          </a>
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition hover:scale-110">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+            </svg>
+          </a>
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition hover:scale-110">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059 1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<!-- ═══════ SCRIPTS ═══════ -->
+<script>
+  // ─── Reveal on scroll ───
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ─── Scroll progress bar ───
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('scrollProgress').style.width = ((window.scrollY / max) * 100) + '%';
+  });
+
+  // ─── Billing toggle ───
+  let isAnnual = false;
+
+  function toggleBilling() {
+    isAnnual = !isAnnual;
+    
+    // Update toggle UI
+    document.getElementById('billingToggle').classList.toggle('active', isAnnual);
+    document.getElementById('monthlyLabel').style.color = isAnnual ? '#94a3b8' : '';
+    document.getElementById('annualLabel').style.color = isAnnual ? '' : '#94a3b8';
+    
+    // Animate all price amounts
+    document.querySelectorAll('.price-amount').forEach(el => {
+      const from = parseFloat(el.textContent) || 0;
+      const to = parseFloat(isAnnual ? el.dataset.annual : el.dataset.monthly) || 0;
+      animateNum(el, from, to);
+    });
+    
+    // Update CTA button labels
+    document.querySelectorAll('button[data-plan-id]').forEach(btn => {
+      const planId = btn.dataset.planId;
+      const plan = (pricingData?.plans || []).find(p => p.id === planId);
+      if (plan) {
+        updateCtaButtonLabel(btn, plan);
+      }
+    });
+    applyUserPlanButtonStates();
+  }
+
+  function animateNum(el, from, to) {
+    const start = performance.now();
+    (function tick(now) {
+      const t = Math.min((now - start) / 400, 1);
+      const value = from + (to - from) * (1 - Math.pow(1 - t, 3));
+      el.textContent = formatPrice(value);
+      if (t < 1) requestAnimationFrame(tick);
+    })(start);
+  }
+
+  // ─── FAQ toggle ───
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // ─── Global Pricing State ───
+  let pricingData = null;
+  let currencySymbol = '₹';
+  let activeOffer = null;
+  function isOfferActiveNow(offer) {
+    if (!offer || !offer.active) return false;
+    const now = new Date();
+    const startsAt = offer.startsAt ? new Date(offer.startsAt) : null;
+    const endsAt = offer.endsAt ? new Date(offer.endsAt) : null;
+    if (startsAt && !Number.isNaN(startsAt.getTime()) && now < startsAt) return false;
+    if (endsAt && !Number.isNaN(endsAt.getTime()) && now > endsAt) return false;
+    return true;
+  }
+
+  function getApplicableOffer(planId, cycle = 'annual') {
+    const offers = Array.isArray(pricingData?.offers) ? pricingData.offers : [];
+    return offers
+      .filter((offer) => {
+        const offerCycle = offer?.cycle || 'all';
+        const cycleMatch = offerCycle === 'all' || offerCycle === cycle;
+        const planMatch = !offer?.planId || offer.planId === 'all' || offer.planId === planId;
+        return cycleMatch && planMatch && isOfferActiveNow(offer);
+      })
+      .sort((a, b) => Number(a.sortOrder || 999) - Number(b.sortOrder || 999))[0] || null;
+  }
+
+  function getEffectiveAnnualMonthlyPrice(plan) {
+    const annualBaseMonthly = Number(plan?.annualPrice || 0);
+    const applicableOffer = getApplicableOffer(plan?.id, 'annual');
+    if (!applicableOffer) {
+      return Number(annualBaseMonthly.toFixed(2));
+    }
+    const discountValue = Number(applicableOffer.discountValue || 0);
+    if ((applicableOffer.discountType || 'percentage') === 'fixed') {
+      return Number(Math.max(0, annualBaseMonthly - discountValue).toFixed(2));
+    }
+    return Number(Math.max(0, annualBaseMonthly - (annualBaseMonthly * discountValue / 100)).toFixed(2));
+  }
+
+  function formatPrice(value) {
+    const numeric = Number(value || 0);
+    if (!Number.isFinite(numeric)) return '0';
+    return numeric.toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1');
+  }
+
+  // ─── Load Pricing from API and Render ───
+  async function loadPricingData() {
+    try {
+      const response = await fetch('/api/pricing');
+      if (!response.ok) throw new Error('Failed to fetch pricing');
+      
+      pricingData = await response.json();
+      console.log('✅ Loaded pricing data:', pricingData);
+      
+      // Update global currency
+      if (pricingData.settings?.currencySymbol) {
+        currencySymbol = pricingData.settings.currencySymbol;
+      }
+      
+      // Store first active annual/global offer for badge/countdown display
+      activeOffer = getApplicableOffer('all', 'annual') || getApplicableOffer('premium', 'annual');
+      
+      // Update offer badge - Use active offer's badgeText if available, fallback to settings
+      const offerBadge = document.getElementById('offerBadge');
+      if (offerBadge) {
+        const badgeText = activeOffer?.badgeText || pricingData.settings?.offerBadgeText || 'Save 20%';
+        offerBadge.textContent = badgeText;
+        console.log('📛 Updated offer badge to:', badgeText);
+      }
+      
+      // Start countdown timer if offer has end date
+      if (activeOffer && activeOffer.endsAt) {
+        startOfferCountdown(activeOffer.endsAt);
+      }
+      
+      // Render all pricing cards dynamically
+      renderPricingCards();
+      
+    } catch (error) {
+      console.error('❌ Could not load pricing data:', error.message);
+      showPricingError();
+    }
+  }
+
+  // ─── Render Pricing Cards Dynamically ───
+  function renderPricingCards() {
+    const container = document.getElementById('pricing-cards-container');
+    if (!container) return;
+    
+    // Clear loading state
+    container.innerHTML = '';
+    
+    // Filter only active plans and sort
+    const activePlans = (pricingData.plans || [])
+      .filter(plan => plan.active !== false)
+      .sort((a, b) => (a.sortOrder || 999) - (b.sortOrder || 999));
+    
+    if (activePlans.length === 0) {
+      container.innerHTML = `
+        <div class="col-span-full text-center py-16">
+          <p class="text-slate-500">No pricing plans available at the moment.</p>
+        </div>
+      `;
+      return;
+    }
+    
+    // Generate card for each plan
+    activePlans.forEach(plan => {
+      const cardHTML = generatePricingCard(plan);
+      container.insertAdjacentHTML('beforeend', cardHTML);
+    });
+    
+    // Re-attach event listeners for price animation
+    attachPriceToggleListeners();
+  }
+
+  // ─── Generate Single Pricing Card HTML ───
+  function generatePricingCard(plan) {
+    const isPopular = plan.popular === true;
+    const monthlyPrice = Number(plan.monthlyPrice || 0);
+    const annualPrice = getEffectiveAnnualMonthlyPrice(plan);
+    
+    // Determine styling based on popularity
+    const borderClass = isPopular 
+      ? 'border-2 border-blue-500 shadow-2xl shadow-blue-500/10' 
+      : 'border border-slate-200 dark:border-slate-800 shadow-sm';
+    
+    const titleColorClass = isPopular ? 'text-blue-600' : 'text-slate-400';
+    const priceColorClass = isPopular ? 'text-blue-600' : '';
+    
+    // Popular badge
+    const popularBadge = isPopular 
+      ? `<span class="absolute top-6 right-6 bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest animate-pulse">Most Popular</span>`
+      : '';
+    
+    // Features list
+    const featuresList = (plan.features || [])
+      .map(feature => `
+        <li class="flex items-center gap-3 text-[11px] text-slate-500">
+          <span class="w-5 h-5 rounded-full bg-green-50 dark:bg-green-900/30 flex items-center justify-center text-green-500 text-[10px] flex-shrink-0">✓</span>
+          ${feature}
+        </li>
+      `)
+      .join('');
+    
+    // CTA Button
+    let ctaButton = '';
+    const ctaLabel = plan.ctaLabel || 'Get Started';
+    
+    if (plan.ctaType === 'buy' || plan.id === 'premium' || plan.id === 'pro') {
+      ctaButton = `
+        <button 
+          onclick="openBuyModal('${plan.id}')" 
+          class="block w-full text-center py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-widest transition-all shadow-lg shadow-blue-500/20 active:scale-95 cursor-pointer border-none"
+          data-plan-id="${plan.id}"
+          data-cta-label="${ctaLabel}">
+          ${ctaLabel}
+        </button>
+      `;
+    } else {
+      const href = plan.ctaLink || '/';
+      ctaButton = `
+        <a 
+          href="${href}" 
+          class="block w-full text-center py-4 rounded-2xl border border-slate-200 dark:border-slate-700 font-black text-xs uppercase tracking-widest text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all no-underline">
+          ${ctaLabel}
+        </a>
+      `;
+    }
+    
+    return `
+      <div class="p-8 rounded-[2rem] ${borderClass} bg-white dark:bg-slate-900 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col relative" data-plan-id="${plan.id}">
+        ${popularBadge}
+        <p class="text-[10px] font-black uppercase tracking-[0.2em] ${titleColorClass} mb-2">${plan.subtitle || ''}</p>
+        <h3 class="text-2xl font-black uppercase tracking-tighter mb-2">${plan.name}</h3>
+        <p class="text-slate-500 text-[11px] leading-relaxed mb-6">${plan.description || ''}</p>
+        <div class="flex items-baseline gap-1 mb-8">
+          <span class="text-lg font-bold text-slate-400">${currencySymbol}</span>
+          <span class="text-5xl font-black tracking-tighter leading-none ${priceColorClass} price-amount" 
+                data-monthly="${monthlyPrice}" 
+                data-annual="${annualPrice}">
+            ${formatPrice(isAnnual ? annualPrice : monthlyPrice)}
+          </span>
+          <span class="text-sm text-slate-400 ml-1">/ month</span>
+        </div>
+        <ul class="space-y-3 mb-8 flex-grow">
+          ${featuresList}
+        </ul>
+        ${ctaButton}
+      </div>
+    `;
+  }
+
+  // ─── Attach Event Listeners for Price Toggle ───
+  function attachPriceToggleListeners() {
+    // Update all price amounts when toggling
+    document.querySelectorAll('.price-amount').forEach(el => {
+      const monthly = parseFloat(el.dataset.monthly) || 0;
+      const annual = parseFloat(el.dataset.annual) || 0;
+      el.textContent = formatPrice(isAnnual ? annual : monthly);
+    });
+    
+    // Update CTA button labels for premium plans
+    document.querySelectorAll('button[data-plan-id]').forEach(btn => {
+      const planId = btn.dataset.planId;
+      const plan = (pricingData?.plans || []).find(p => p.id === planId);
+      if (plan) {
+        updateCtaButtonLabel(btn, plan);
+      }
+    });
+    applyUserPlanButtonStates();
+  }
+
+  // ─── Update CTA Button Label ───
+  function updateCtaButtonLabel(button, plan) {
+    const monthlyPrice = Number(plan.monthlyPrice || 0);
+    const annualPrice = getEffectiveAnnualMonthlyPrice(plan);
+    const annualTotal = Number((annualPrice * 12).toFixed(2));
+    
+    if (isAnnual) {
+      button.textContent = `Buy ${plan.name} — ${currencySymbol}${formatPrice(annualTotal)}/year`;
+    } else {
+      button.textContent = `Buy ${plan.name} — ${currencySymbol}${formatPrice(monthlyPrice)}/mo`;
+    }
+  }
+
+  function normalizeCycleValue(cycle) {
+    return String(cycle || 'monthly').toLowerCase() === 'annual' ? 'annual' : 'monthly';
+  }
+
+  function getSessionUser() {
+    return JSON.parse(localStorage.getItem('billgen_user') || 'null');
+  }
+
+  function getValidDate(value) {
+    const d = new Date(value || '');
+    return Number.isNaN(d.getTime()) ? null : d;
+  }
+
+  function isPlanActive(user) {
+    if (!user || !user.plan || String(user.plan).toLowerCase() === 'free') return false;
+    const expires = getValidDate(user.plan_expires_at);
+    if (!expires) return true;
+    return expires.getTime() > Date.now();
+  }
+
+  function getRemainingCredits(user) {
+    const credits = Number(user?.credits);
+    if (!Number.isFinite(credits)) return 0;
+    return Math.max(0, Math.floor(credits));
+  }
+
+  function isSamePlanCycleAlreadyActive(user, planId, cycle) {
+    if (!isPlanActive(user)) return false;
+    const currentPlan = String(user.plan || '').toLowerCase();
+    const currentCycle = normalizeCycleValue(user.plan_cycle || 'monthly');
+    return currentPlan === String(planId || '').toLowerCase() && currentCycle === normalizeCycleValue(cycle);
+  }
+
+  function formatShortDate(value) {
+    const d = getValidDate(value);
+    if (!d) return '';
+    return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+  }
+
+  function applyUserPlanButtonStates() {
+    const user = getSessionUser();
+    const selectedCycle = isAnnual ? 'annual' : 'monthly';
+    document.querySelectorAll('button[data-plan-id]').forEach((btn) => {
+      const planId = btn.dataset.planId;
+      const plan = (pricingData?.plans || []).find((p) => p.id === planId);
+      if (!plan) return;
+
+      const samePlanCycleActive = isSamePlanCycleAlreadyActive(user, planId, selectedCycle);
+      const remainingCredits = getRemainingCredits(user);
+
+      if (samePlanCycleActive && remainingCredits > 0) {
+        const untilLabel = formatShortDate(user.plan_expires_at);
+        btn.disabled = true;
+        btn.textContent = untilLabel ? `Already Purchased • Active till ${untilLabel}` : 'Already Purchased';
+        btn.style.background = '#94a3b8';
+        btn.style.cursor = 'not-allowed';
+        btn.style.boxShadow = 'none';
+        return;
+      }
+
+      if (samePlanCycleActive && remainingCredits <= 0) {
+        btn.disabled = false;
+        btn.textContent = planId === 'business' ? 'Buy More Business Credits' : 'Buy More Credits';
+        btn.style.background = 'linear-gradient(135deg,#f59e0b 0%,#d97706 100%)';
+        btn.style.cursor = 'pointer';
+        btn.style.boxShadow = '0 10px 24px -14px rgba(217,119,6,0.85)';
+        return;
+      }
+
+      btn.disabled = false;
+      btn.style.background = '';
+      btn.style.cursor = '';
+      btn.style.boxShadow = '';
+      updateCtaButtonLabel(btn, plan);
+    });
+  }
+
+  // ─── Offer Countdown Timer ───
+  let countdownInterval = null;
+  
+  function startOfferCountdown(endDateStr) {
+    const countdownEl = document.getElementById('offerCountdown');
+    const textEl = document.getElementById('countdownText');
+    
+    if (!countdownEl || !textEl) return;
+    
+    const endDate = new Date(endDateStr);
+    
+    function updateCountdown() {
+      const now = new Date();
+      const diff = endDate - now;
+      
+      if (diff <= 0) {
+        countdownEl.classList.add('hidden');
+        if (countdownInterval) clearInterval(countdownInterval);
+        return;
+      }
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      
+      let text = 'Offer ends in ';
+      if (days > 0) text += `${days}d `;
+      if (hours > 0 || days > 0) text += `${hours}h `;
+      text += `${minutes}m`;
+      
+      textEl.textContent = text;
+      countdownEl.classList.remove('hidden');
+    }
+    
+    updateCountdown();
+    countdownInterval = setInterval(updateCountdown, 60000); // Update every minute
+  }
+
+  // ─── Show Error State ───
+  function showPricingError() {
+    const container = document.getElementById('pricing-cards-container');
+    if (!container) return;
+    
+    container.innerHTML = `
+      <div class="col-span-full text-center py-16">
+        <div class="text-red-500 text-4xl mb-4">⚠️</div>
+        <p class="text-slate-500 mb-4">Unable to load pricing plans.</p>
+        <button 
+          onclick="loadPricingData()" 
+          class="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-all">
+          Retry
+        </button>
+      </div>
+    `;
+  }
+
+  // Load pricing on page load
+  window.addEventListener('DOMContentLoaded', loadPricingData);
+</script>
+
+<!-- Three.js (global, no ES module import) -->
+<script>
+  // Payment Gateway Variables - declared at top to avoid TDZ issues
+  var selectedGateway = 'razorpay';
+  var selectedPaymentMethod = 'card';
+  
+  (function() {
+    const canvas = document.getElementById('three-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 30;
+
+    const COUNT = 600;
+    const positions = new Float32Array(COUNT * 3);
+    const velocities = new Float32Array(COUNT * 3);
+
+    for (let i = 0; i < COUNT; i++) {
+      positions[i * 3]     = (Math.random() - 0.5) * 80;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 80;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 40;
+      velocities[i * 3]     = (Math.random() - 0.5) * 0.005;
+      velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.005;
+      velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.003;
+    }
+
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    // Detect dark mode for particle color
+    const isDark = document.documentElement.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const mat = new THREE.PointsMaterial({
+      size: 2,
+      color: 0x3b82f6,
+      transparent: true,
+      opacity: isDark ? 0.25 : 0.12,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    });
+
+    scene.add(new THREE.Points(geo, mat));
+
+    // Rings
+    const ring1 = new THREE.Mesh(
+      new THREE.TorusGeometry(8, 0.03, 16, 100),
+      new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: isDark ? 0.06 : 0.04 })
+    );
+    const ring2 = new THREE.Mesh(
+      new THREE.TorusGeometry(12, 0.02, 16, 100),
+      new THREE.MeshBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: isDark ? 0.04 : 0.03 })
+    );
+    scene.add(ring1, ring2);
+
+    let mX = 0, mY = 0;
+    document.addEventListener('mousemove', e => {
+      mX = (e.clientX / window.innerWidth - 0.5) * 2;
+      mY = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    const clock = new THREE.Clock();
+    (function animate() {
+      requestAnimationFrame(animate);
+      const t = clock.getElapsedTime();
+
+      camera.position.x += (mX * 2 - camera.position.x) * 0.02;
+      camera.position.y += (-mY * 2 - camera.position.y) * 0.02;
+      camera.lookAt(0, 0, 0);
+
+      ring1.rotation.x = t * 0.1;
+      ring1.rotation.y = t * 0.15;
+      ring2.rotation.x = -t * 0.08;
+      ring2.rotation.z = t * 0.12;
+
+      const arr = geo.attributes.position.array;
+      for (let i = 0; i < COUNT; i++) {
+        arr[i*3]   += velocities[i*3];
+        arr[i*3+1] += velocities[i*3+1];
+        arr[i*3+2] += velocities[i*3+2];
+        if (Math.abs(arr[i*3])   > 40) velocities[i*3]   *= -1;
+        if (Math.abs(arr[i*3+1]) > 40) velocities[i*3+1] *= -1;
+        if (Math.abs(arr[i*3+2]) > 20) velocities[i*3+2] *= -1;
+      }
+      geo.attributes.position.needsUpdate = true;
+      renderer.render(scene, camera);
+    })();
+  })();
+
+function openTemplatePageById(billId) {
+  window.location.href = '/templates?bill=' + encodeURIComponent(billId);
+}
+
+(function checkAuth() {
+  const user = JSON.parse(localStorage.getItem('billgen_user') || 'null');
+  if (user) {
+    document.getElementById('signInBtn').classList.add('hidden');
+    const userNav = document.getElementById('userInfoNav');
+    userNav.classList.remove('hidden');
+    userNav.classList.add('flex');
+    document.getElementById('navUserName').textContent = `${user.first_name || ''} ${user.last_name || ''}`.trim() || user.email || 'User';
+  }
+})();
+
+async function logoutUser() {
+  const user = JSON.parse(localStorage.getItem('billgen_user') || 'null');
+  if (user?.id) {
+    try {
+      await fetch('/api/auth/logout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: user.id })
+      });
+    } catch (e) {}
+  }
+  localStorage.removeItem('billgen_user');
+  location.reload();
+}
+// ─── Buy Modal ──────────────────────────────────────────────────────────────
+function openBuyModal(planId) {
+  const user = getSessionUser();
+  
+  // Find plan from pricingData
+  const plan = (pricingData?.plans || []).find(p => p.id === planId);
+  if (!plan) {
+    console.error('Plan not found:', planId);
+    return;
+  }
+  
+  const cycle = isAnnual ? 'annual' : 'monthly';
+  const samePlanCycleActive = isSamePlanCycleAlreadyActive(user, planId, cycle);
+  const creditsExhausted = samePlanCycleActive && getRemainingCredits(user) <= 0;
+
+  if (samePlanCycleActive && !creditsExhausted) {
+    const untilLabel = formatShortDate(user?.plan_expires_at);
+    alert(untilLabel ? `You already purchased this plan. Active until ${untilLabel}.` : 'You already purchased this plan.');
+    return;
+  }
+
+  if (creditsExhausted) {
+    window.BillGenUI?.notify?.('Credits are exhausted for this active plan. Buying again will refill credits instantly.', {
+      type: 'info',
+      title: 'Credit Refill',
+      duration: 3600,
+    });
+  }
+  
+  const target = `/checkout?plan=${encodeURIComponent(planId)}&cycle=${encodeURIComponent(cycle)}${creditsExhausted ? '&topup=1' : ''}`;
+  if (!user || !user.id) {
+    sessionStorage.setItem('billgen_redirect_after_login', target);
+    window.location.href = '/log_in';
+    return;
+  }
+  window.BillGenUI?.showLoader?.('Preparing secure checkout...');
+  window.location.href = target;
+}
+
+function closeBuyModal() {
+  document.getElementById('premium-modal').style.display = 'none';
+  // Reset confirm button
+  const btn = document.getElementById('pm-confirm-btn');
+  if (btn) { 
+    btn.style.display = ''; 
+    btn.disabled = false; 
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Pay Securely'; 
+  }
+  // Reset error message
+  const errEl = document.getElementById('pm-error');
+  if (errEl) errEl.style.display = 'none';
+}
+
+// Payment Gateway Selection Functions
+function selectPaymentMethod(method) {
+  selectedPaymentMethod = method;
+  // Update visual selection
+  document.querySelectorAll('.payment-method-option').forEach(el => {
+    el.style.borderColor = '#e2e8f0';
+    el.style.background = '#fff';
+    const svg = el.querySelector('svg');
+    if (svg) svg.style.stroke = '#64748b';
+  });
+  const selectedEl = document.querySelector(`input[value="${method}"]`);
+  if (selectedEl) {
+    selectedEl.checked = true;
+    const label = selectedEl.closest('.payment-method-option');
+    label.style.borderColor = '#2563eb';
+    label.style.background = '#eff6ff';
+    const svg = label.querySelector('svg');
+    if (svg) svg.style.stroke = '#2563eb';
+  }
+}
+
+function selectGateway(gateway) {
+  selectedGateway = 'razorpay';
+}
+
+async function processPayment() {
+  const user = JSON.parse(localStorage.getItem('billgen_user') || 'null');
+  if (!user?.id) return;
+  
+  const modal = document.getElementById('premium-modal');
+  const planId = modal.dataset.planId || 'premium';
+  const cycle = modal.dataset.cycle || 'monthly';
+  const amount = parseInt(modal.dataset.price) || 0;
+  
+  const btn = document.getElementById('pm-confirm-btn');
+  const errEl = document.getElementById('pm-error');
+  btn.disabled = true;
+  btn.innerHTML = '<span style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,0.4);border-top-color:white;border-radius:50%;animation:spin360 0.7s linear infinite;vertical-align:middle;margin-right:8px;"></span>Redirecting...';
+  if (errEl) errEl.style.display = 'none';
+
+  try {
+    const link = 'https://razorpay.me/@rishabhsingh4455';
+    window.location.href = link;
+    
+  } catch (e) {
+    console.error('[Payment Error]', e);
+    if (errEl) {
+      errEl.textContent = `Payment redirect failed: ${e.message}`;
+      errEl.style.display = 'block';
+    }
+    btn.disabled = false;
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Pay Securely';
+  }
+}
+
+// Razorpay Integration
+async function processRazorpayPayment(orderData, user, planId, cycle, amount) {
+  // Load Razorpay SDK if not loaded
+  if (!window.Razorpay) {
+    await loadScript('https://checkout.razorpay.com/v1/checkout.js');
+  }
+  
+  const options = {
+    key: orderData.gatewayConfig?.keyId || 'rzp_test_xxxxxxxxxxxxx',
+    amount: amount * 100, // Razorpay expects paise
+    currency: 'INR',
+    name: 'eBillGenerator',
+    description: `${planId} Plan - ${cycle}`,
+    image: 'https://razorpay.com/favicon.png',
+    order_id: orderData.gatewayOrderId || orderData.orderId,
+    prefill: {
+      name: `${user.first_name || ''} ${user.last_name || ''}`.trim(),
+      email: user.email || '',
+      contact: user.phone || ''
+    },
+    notes: {
+      address: 'eBillGenerator'
+    },
+    theme: {
+      color: '#2563eb'
+    },
+    method: {
+      card: selectedPaymentMethod === 'card',
+      netbanking: selectedPaymentMethod === 'netbanking',
+      upi: selectedPaymentMethod === 'upi',
+      wallet: selectedPaymentMethod === 'wallet'
+    },
+    handler: async function(response) {
+      // Payment successful - verify on server
+      await verifyPayment({
+        gateway: 'razorpay',
+        orderId: orderData.orderId,
+        gatewayOrderId: response.razorpay_order_id,
+        paymentId: response.razorpay_payment_id,
+        signature: response.razorpay_signature,
+        userId: user.id,
+        planId: planId,
+        cycle: cycle,
+        amount: amount
+      });
+    },
+    modal: {
+      ondismiss: function() {
+        const btn = document.getElementById('pm-confirm-btn');
+        btn.disabled = false;
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Pay Securely';
+      }
+    }
+  };
+  
+  const rzp = new Razorpay(options);
+  rzp.on('payment.failed', function (response) {
+    const btn = document.getElementById('pm-confirm-btn');
+    const errEl = document.getElementById('pm-error');
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Pay Securely';
+    }
+    if (errEl) {
+      const code = response?.error?.code || 'PAYMENT_FAILED';
+      const reason = response?.error?.description || response?.error?.reason || 'Payment could not be completed.';
+      errEl.textContent = `${code}: ${reason}`;
+      errEl.style.display = 'block';
+    }
+  });
+  rzp.open();
+}
+
+// Stripe/PayU removed: Razorpay-only flow
+
+// Verify Payment on Server
+async function verifyPayment(paymentData) {
+  const btn = document.getElementById('pm-confirm-btn');
+  const errEl = document.getElementById('pm-error');
+  
+  btn.innerHTML = '<span style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,0.4);border-top-color:white;border-radius:50%;animation:spin360 0.7s linear infinite;vertical-align:middle;margin-right:8px;"></span>Verifying payment...';
+  
+  try {
+    const res = await fetch('/api/payment/verify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(paymentData)
+    });
+    
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Payment verification failed');
+    
+    // Payment verified - update user session
+    const user = JSON.parse(localStorage.getItem('billgen_user') || '{}');
+    const updatedUser = { 
+      ...user, 
+      plan: data.user?.plan || paymentData.planId, 
+      plan_purchased_at: data.user?.plan_purchased_at || new Date().toISOString() 
+    };
+    localStorage.setItem('billgen_user', JSON.stringify(updatedUser));
+    
+    // Show success
+    closeBuyModal();
+    const banner = document.getElementById('pm-success-banner');
+    banner.style.display = 'flex';
+    banner.innerHTML = '🎉 Payment successful! Activating your plan...';
+    setTimeout(() => { window.location.href = '/templates'; }, 2200);
+    
+  } catch (e) {
+    console.error('[Verification Error]', e);
+    if (errEl) {
+      errEl.textContent = `Verification failed: ${e.message}`;
+      errEl.style.display = 'block';
+    }
+    btn.disabled = false;
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Pay Securely';
+  }
+}
+
+// Helper: Load external script
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src="${src}"]`)) {
+      resolve();
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
+// Legacy function for backward compatibility
+async function confirmBuyPremium() {
+  return processPayment();
+}
+
+updateProButtonLabel();
+applyUserPlanButtonStates();
+</script>
+
+<!-- Checkout now uses dedicated /checkout page (no popup modal). -->
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,779 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P5TZMG4');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBillGenerator.com | My Profile</title>
+  <meta name="description"
+    content="Manage your eBillGenerator.com profile, plan details, credits, and billing activity.">
+  <meta name="author" content="eBillGenerator.com">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="application-name" content="eBillGenerator.com">
+  <meta name="apple-mobile-web-app-title" content="eBillGenerator.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="eBillGenerator.com | My Profile">
+  <meta property="og:description"
+    content="Manage your eBillGenerator.com account preferences and subscription details.">
+  <meta property="og:image" content="https://ebillgenerator.com/favicon.svg">
+  <meta property="og:url" content="https://ebillgenerator.com/profile">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="eBillGenerator.com | My Profile">
+  <meta name="twitter:description"
+    content="Manage your eBillGenerator.com account preferences and subscription details.">
+  <meta name="twitter:image" content="https://ebillgenerator.com/favicon.svg">
+  <link rel="canonical" href="https://ebillgenerator.com/profile">
+  <link rel="icon" type="image/svg+xml" href="/billgen-watermark.png">
+  <link rel="shortcut icon" href="/billgen-watermark.png">
+  <link rel="apple-touch-icon" href="/billgen-watermark.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+
+    .stat-card {
+      transition: transform 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .history-item {
+      transition: all 0.2s;
+    }
+
+    .history-item:hover {
+      background: #f8fafc;
+    }
+
+    .gradient-premium {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .premium-border {
+      border: 2px solid #fbbf24;
+      box-shadow: 0 8px 32px rgba(251, 191, 36, 0.3);
+    }
+
+    .premium-avatar {
+      box-shadow: 0 12px 40px rgba(251, 191, 36, 0.5);
+      border: 3px solid #fbbf24;
+    }
+
+    .premium-crown {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .premium-glow {
+      box-shadow: 0 0 30px rgba(251, 191, 36, 0.6);
+    }
+
+    .edit-mode-input {
+      border: 2px dashed #3b82f6 !important;
+      background: #eff6ff !important;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P5TZMG4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <!-- Navigation (Shared Component) -->
+  <div id="bgnav-placeholder"></div>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <!-- Page Header -->
+    <div class="mb-8 animate-fade-in">
+      <h1 class="text-3xl font-black uppercase tracking-tight mb-2">
+        <span class="gradient-text">My Profile</span>
+      </h1>
+      <p class="text-sm text-slate-500 font-medium">Manage your account and view your activity</p>
+    </div>
+
+    <!-- Profile Loading State -->
+    <div id="profile-loading" class="text-center py-20">
+      <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-600 border-t-transparent"></div>
+      <p class="mt-4 text-slate-500 font-medium">Loading profile...</p>
+    </div>
+
+    <!-- Profile Content -->
+    <div id="profile-content" class="hidden space-y-6">
+      <!-- User Info Card -->
+      <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 sm:p-8 animate-fade-in" id="profile-card">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-6">
+            <div class="relative">
+              <div
+                class="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-3xl font-black shadow-xl"
+                id="user-avatar">
+                RS
+              </div>
+              <div class="hidden absolute -top-3 -right-3 text-3xl premium-crown" id="premium-crown">👑</div>
+            </div>
+            <div>
+              <h2 class="text-2xl font-black uppercase tracking-tight" id="user-fullname">Rishabh Singh</h2>
+              <p class="text-sm text-slate-500 font-medium" id="user-email">786rishabhsingh786@gmail.com</p>
+              <div class="mt-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase"
+                  id="user-plan-badge">
+                  <span class="w-2 h-2 rounded-full bg-current"></span>
+                  <span>Free Plan</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleEditMode()" id="edit-btn"
+            class="px-5 py-2.5 bg-blue-600 text-white rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-blue-700 transition shadow-lg hover:shadow-xl">
+            <span class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+              <span>Edit Profile</span>
+            </span>
+          </button>
+          <div id="edit-actions" class="hidden flex gap-3">
+            <button onclick="saveProfile()"
+              class="px-5 py-2.5 bg-green-600 text-white rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-green-700 transition shadow-lg">
+              <span class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Save</span>
+              </span>
+            </button>
+            <button onclick="cancelEdit()"
+              class="px-5 py-2.5 bg-slate-600 text-white rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-slate-700 transition shadow-lg">
+              Cancel
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div class="stat-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
+            <p class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Total Downloads</p>
+            <p class="text-3xl font-black text-blue-900" id="stat-downloads">0</p>
+          </div>
+          <div class="stat-card bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-xl p-4 border border-cyan-200">
+            <p class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-1">Credits Left</p>
+            <p class="text-3xl font-black text-cyan-900" id="stat-credits">0</p>
+            <p class="text-[10px] font-bold text-cyan-700 uppercase tracking-wide mt-1" id="stat-credit-limit">/ 0
+              Monthly</p>
+          </div>
+          <div class="stat-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 border border-purple-200">
+            <p class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">Member Since</p>
+            <p class="text-lg font-black text-purple-900" id="stat-member-since">-</p>
+          </div>
+          <div class="stat-card bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 border border-green-200">
+            <p class="text-xs font-bold text-green-600 uppercase tracking-wider mb-1">Last Active</p>
+            <p class="text-lg font-black text-green-900" id="stat-last-active">-</p>
+          </div>
+          <div class="stat-card bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-4 border border-orange-200">
+            <p class="text-xs font-bold text-orange-600 uppercase tracking-wider mb-1">Account Type</p>
+            <p class="text-lg font-black text-orange-900 uppercase" id="stat-account-type">Free</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Card (if premium) -->
+      <div id="premium-card"
+        class="hidden gradient-premium rounded-2xl shadow-xl p-8 text-white animate-fade-in premium-glow">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <svg class="w-7 h-7 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <h3 class="text-sm font-black uppercase tracking-wider">⚡ Premium Member</h3>
+            </div>
+            <div class="text-6xl font-black mb-2" id="premium-days" style="text-shadow: 0 4px 8px rgba(0,0,0,0.3)">365
+            </div>
+            <p class="text-sm font-bold opacity-90">Days of Premium Access Remaining</p>
+            <div class="mt-4 bg-white bg-opacity-20 rounded-lg px-4 py-2 inline-block">
+              <p class="text-xs font-bold opacity-80" id="premium-benefits-text">100 Credits / Month • All Templates •
+                Priority Support</p>
+            </div>
+          </div>
+          <div class="text-right">
+            <p class="text-xs font-bold opacity-75 mb-1">Activated On</p>
+            <p class="text-sm font-black" id="premium-purchase-date">Apr 2, 2026</p>
+            <div class="mt-4 h-px bg-white opacity-30"></div>
+            <p class="text-xs font-bold opacity-75 mt-4 mb-1">Valid Until</p>
+            <p class="text-sm font-black" id="premium-expiry-date">Apr 2, 2027</p>
+            <div class="mt-4 h-px bg-white opacity-30"></div>
+            <p class="text-xs font-bold opacity-75 mt-4 mb-1">Credits Remaining</p>
+            <p class="text-sm font-black" id="premium-credits-remaining">0</p>
+            <div class="mt-5 bg-white bg-opacity-20 rounded-lg px-3 py-2">
+              <p class="text-xs font-black">🎉 Enjoying Premium?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account Details -->
+      <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 sm:p-8 animate-fade-in">
+        <h3 class="text-lg font-black uppercase tracking-tight mb-6 flex items-center gap-2">
+          <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+          Account Details
+        </h3>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">First Name</label>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 font-semibold text-slate-900"
+              id="detail-firstname-display">-</div>
+            <input type="text" id="detail-firstname-input"
+              class="hidden w-full border border-slate-200 rounded-xl px-4 py-3 font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter first name">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">Last Name</label>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 font-semibold text-slate-900"
+              id="detail-lastname-display">-</div>
+            <input type="text" id="detail-lastname-input"
+              class="hidden w-full border border-slate-200 rounded-xl px-4 py-3 font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter last name">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">Email Address</label>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 font-semibold text-slate-900"
+              id="detail-email">-</div>
+          </div>
+          <div>
+            <label class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">Login Method</label>
+            <div
+              class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 font-semibold text-slate-900 capitalize"
+              id="detail-auth-provider">Email</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download History -->
+      <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 sm:p-8 animate-fade-in">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-lg font-black uppercase tracking-tight flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+            </svg>
+            Download History
+          </h3>
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wider" id="history-count">0 Downloads</span>
+        </div>
+
+        <div id="download-history" class="space-y-3">
+          <!-- Will be populated by JavaScript -->
+        </div>
+
+        <div id="no-downloads" class="hidden text-center py-12">
+          <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+          </svg>
+          <p class="text-slate-400 font-medium">No downloads yet</p>
+          <a href="/templates"
+            class="inline-block mt-4 px-6 py-2 bg-blue-600 text-white rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-blue-700 transition">
+            Generate Your First Bill
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 pt-20 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
+
+        <div class="space-y-6">
+          <img src="/billgen-watermark.png" class="h-16 scale-[1.15] md:h-20 origin-left w-auto object-contain">
+          <p class="text-slate-500 text-xs leading-relaxed font-medium">
+            For educational/personal use only. Illegal use or fraud is strictly prohibited. Users assume all legal
+            responsibility; developers are not liable for any misuse. </p>
+          <div class="flex items-center gap-2">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span class="text-[9px] font-black uppercase tracking-widest text-slate-400">Systems Operational</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900">Product</h4>
+          <ul class="space-y-4">
+            <li><a href="/templates?bill=fuel"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Fuel
+                Generator</a></li>
+            <li><a href="/templates?bill=rent"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Rent
+                Receipts</a></li>
+            <li><a href="/templates?bill=lta"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">LTA
+                Templates</a></li>
+            <li><a href="/templates?bill=invoice"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Custom
+                GST Invoice</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900">Company</h4>
+          <ul class="space-y-4">
+            <li><a href="about.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">About
+                Us</a></li>
+            <li><a href="privacypolicy.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Privacy
+                Policy</a></li>
+            <li><a href="termsofuse.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Terms
+                of Use</a></li>
+            <li><a href="refundpolicy.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Refund
+                Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900">Contact</h4>
+          <ul class="space-y-4">
+            <li><a href="mailto:info@ebillgenerator.com"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                info@ebillgenerator.com
+              </a></li>
+            <li><span class="text-[11px] font-bold text-slate-400 uppercase tracking-tight">Support: 24/7</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900">Newsletter
+          </h4>
+          <p class="text-[10px] text-slate-500 mb-4 font-medium uppercase tracking-tighter">Get product updates & new
+            templates.</p>
+          <div class="flex gap-2">
+            <input type="email" placeholder="EMAIL"
+              class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-[10px] focus:outline-none focus:ring-2 ring-blue-500 w-full font-bold">
+            <button
+              class="bg-blue-600 text-white p-2 rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div
+        class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+          © 2026 eBillGenerator.com • All Rights Reserved
+        </p>
+
+        <div class="flex gap-6">
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition hover:scale-110">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+            </svg>
+          </a>
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition hover:scale-110">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+            </svg>
+          </a>
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition hover:scale-110">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059 1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Navigation Script -->
+  <script type="module" src="/src/init-nav.js"></script>
+  <script>
+    // Replaced imports
+    (function wn(){if(window.BillGenNav){window.BillGenNav.init({activePage:'profile'})}else{setTimeout(wn,50)}})();
+
+    let currentUser = null;
+    let isEditMode = false;
+
+    // Toggle edit mode
+    function toggleEditMode() {
+      isEditMode = true;
+      document.getElementById('edit-btn').classList.add('hidden');
+      document.getElementById('edit-actions').classList.remove('hidden');
+
+      // Show input fields, hide display divs
+      document.getElementById('detail-firstname-display').classList.add('hidden');
+      document.getElementById('detail-firstname-input').classList.remove('hidden');
+      document.getElementById('detail-firstname-input').classList.add('edit-mode-input');
+
+      document.getElementById('detail-lastname-display').classList.add('hidden');
+      document.getElementById('detail-lastname-input').classList.remove('hidden');
+      document.getElementById('detail-lastname-input').classList.add('edit-mode-input');
+
+      // Set current values
+      document.getElementById('detail-firstname-input').value = currentUser.first_name || '';
+      document.getElementById('detail-lastname-input').value = currentUser.last_name || '';
+    }
+
+    // Cancel edit mode
+    function cancelEdit() {
+      isEditMode = false;
+      document.getElementById('edit-btn').classList.remove('hidden');
+      document.getElementById('edit-actions').classList.add('hidden');
+
+      // Hide input fields, show display divs
+      document.getElementById('detail-firstname-display').classList.remove('hidden');
+      document.getElementById('detail-firstname-input').classList.add('hidden');
+
+      document.getElementById('detail-lastname-display').classList.remove('hidden');
+      document.getElementById('detail-lastname-input').classList.add('hidden');
+    }
+
+    // Save profile changes
+    async function saveProfile() {
+      const firstName = document.getElementById('detail-firstname-input').value.trim();
+      const lastName = document.getElementById('detail-lastname-input').value.trim();
+
+      if (!firstName || !lastName) {
+        alert('Please enter both first and last name');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/user/update', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_id: currentUser.id,
+            first_name: firstName,
+            last_name: lastName
+          })
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.message || 'Update failed');
+
+        // Update session storage
+        currentUser.first_name = firstName;
+        currentUser.last_name = lastName;
+        localStorage.setItem('billgen_user', JSON.stringify(currentUser));
+
+        // Update display
+        document.getElementById('detail-firstname-display').textContent = firstName;
+        document.getElementById('detail-lastname-display').textContent = lastName;
+        document.getElementById('user-fullname').textContent = `${firstName} ${lastName}`;
+
+        const initials = (firstName[0] || '') + (lastName[0] || '');
+        document.getElementById('user-avatar').textContent = initials.toUpperCase();
+
+        // Exit edit mode
+        cancelEdit();
+
+        // Show success message
+        const successMsg = document.createElement('div');
+        successMsg.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-xl font-bold shadow-xl z-50 animate-fade-in';
+        successMsg.textContent = '✓ Profile updated successfully!';
+        document.body.appendChild(successMsg);
+        setTimeout(() => successMsg.remove(), 3000);
+
+      } catch (err) {
+        alert('Failed to update profile: ' + err.message);
+      }
+    }
+
+    async function fetchJsonWithTimeout(url, options = {}, timeoutMs = 12000) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeoutMs);
+      try {
+        const response = await fetch(url, { ...options, signal: controller.signal });
+        const payload = await response.json().catch(() => ({}));
+        return { response, payload };
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    const profileBootGuard = setTimeout(() => {
+      const loading = document.getElementById('profile-loading');
+      const content = document.getElementById('profile-content');
+      if (!loading || loading.classList.contains('hidden')) return;
+      loading.innerHTML = `
+        <div class="text-center py-12">
+          <svg class="w-16 h-16 mx-auto text-amber-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <p class="text-amber-600 font-bold mb-2">Profile is taking longer than expected</p>
+          <p class="text-slate-500 text-sm mb-4">Please refresh once. If it continues, log out and log in again.</p>
+          <button onclick="location.reload()" class="px-6 py-2 bg-blue-600 text-white rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-blue-700 transition">
+            Refresh
+          </button>
+        </div>
+      `;
+      if (content) content.classList.add('hidden');
+    }, 15000);
+
+    // Load user profile data
+    async function loadProfile() {
+      try {
+        const userStr = localStorage.getItem('billgen_user');
+        if (!userStr) {
+          window.location.href = '/log_in';
+          return;
+        }
+
+        let user = null;
+        try {
+          user = JSON.parse(userStr);
+        } catch {
+          localStorage.removeItem('billgen_user');
+          window.location.href = '/log_in';
+          return;
+        }
+        if (!user || !user.id) {
+          localStorage.removeItem('billgen_user');
+          window.location.href = '/log_in';
+          return;
+        }
+        currentUser = user;  // Store globally
+
+        // Fetch live entitlement so credits are always current
+        let entitlement = null;
+        try {
+          const entitlementResult = await fetchJsonWithTimeout(`/api/users/${encodeURIComponent(user.id)}/entitlement`);
+          if (entitlementResult.response.ok) {
+            entitlement = entitlementResult.payload;
+            user.plan = (entitlement.planId || user.plan || 'free').toLowerCase();
+            user.credits = Number.isFinite(Number(entitlement.creditsRemaining)) ? Math.max(0, Math.floor(Number(entitlement.creditsRemaining))) : (user.credits || 0);
+            user.monthly_credit_limit = Number.isFinite(Number(entitlement.monthlyCreditLimit)) ? Math.max(0, Math.floor(Number(entitlement.monthlyCreditLimit))) : (user.monthly_credit_limit || 0);
+            user.plan_cycle = entitlement.planCycle || user.plan_cycle;
+            user.plan_expires_at = entitlement.planExpiresAt || user.plan_expires_at;
+            localStorage.setItem('billgen_user', JSON.stringify(user));
+            currentUser = user;
+          }
+        } catch (entErr) {
+          console.warn('Entitlement fetch failed:', entErr.message);
+        }
+
+        // Check if premium
+        const isPremium = (user.plan || 'free').toLowerCase() !== 'free';
+        const creditsRemaining = Number.isFinite(Number(user.credits)) ? Math.max(0, Math.floor(Number(user.credits))) : 0;
+        const monthlyCreditLimit = Number.isFinite(Number(user.monthly_credit_limit)) ? Math.max(0, Math.floor(Number(user.monthly_credit_limit))) : 0;
+        const planLabel = isPremium
+          ? String(user.plan || 'premium').replace(/_/g, ' ')
+          : 'Free Plan';
+
+        // Apply premium styling
+        if (isPremium) {
+          document.getElementById('profile-card').classList.add('premium-border');
+          document.getElementById('user-avatar').classList.add('premium-avatar', 'premium-glow');
+          document.getElementById('premium-crown').classList.remove('hidden');
+        }
+
+        // Update avatar initials
+        const initials = (user.first_name?.[0] || '') + (user.last_name?.[0] || '');
+        document.getElementById('user-avatar').textContent = initials.toUpperCase() || 'U';
+
+        // Update user info
+        document.getElementById('user-fullname').textContent = `${user.first_name || ''} ${user.last_name || ''}`.trim() || 'User';
+        document.getElementById('user-email').textContent = user.email || '';
+
+        // Update plan badge
+        const planBadge = document.getElementById('user-plan-badge');
+        planBadge.className = `inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase ${isPremium ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' : 'bg-slate-200 text-slate-700'}`;
+        planBadge.querySelector('span:last-child').textContent = isPremium ? planLabel : 'Free Plan';
+
+        // Fetch download data
+        let downloads = [];
+        try {
+          const downloadsResult = await fetchJsonWithTimeout(`/api/downloads/${encodeURIComponent(user.id)}`);
+          if (downloadsResult.response.ok) {
+            downloads = downloadsResult.payload.downloads || [];
+          }
+        } catch (downloadErr) {
+          console.warn('Downloads fetch failed:', downloadErr.message);
+        }
+
+        // Update stats
+        document.getElementById('stat-downloads').textContent = downloads.length;
+        document.getElementById('stat-credits').textContent = creditsRemaining;
+        document.getElementById('stat-credit-limit').textContent = monthlyCreditLimit > 0
+          ? `/ ${monthlyCreditLimit} Monthly`
+          : `/ ${entitlement?.freeCredits || 2} Free`;
+        document.getElementById('stat-account-type').textContent = user.plan || 'Free';
+
+        const memberSince = new Date(user.created_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        document.getElementById('stat-member-since').textContent = memberSince;
+
+        const lastLogin = new Date(user.last_login || user.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        document.getElementById('stat-last-active').textContent = lastLogin;
+
+        // Update account details
+        document.getElementById('detail-firstname-display').textContent = user.first_name || '-';
+        document.getElementById('detail-lastname-display').textContent = user.last_name || '-';
+        document.getElementById('detail-email').textContent = user.email || '-';
+        document.getElementById('detail-auth-provider').textContent = user.auth_provider || 'Email';
+
+        // Premium card
+        if (isPremium && user.plan_purchased_at) {
+          const purchaseDate = new Date(user.plan_purchased_at);
+          const expiryDate = user.plan_expires_at
+            ? new Date(user.plan_expires_at)
+            : (() => {
+              const d = new Date(purchaseDate);
+              d.setDate(d.getDate() + ((user.plan_cycle || 'monthly') === 'annual' ? 365 : 30));
+              return d;
+            })();
+          const today = new Date();
+          const daysLeft = Math.ceil((expiryDate - today) / (1000 * 60 * 60 * 24));
+
+          document.getElementById('premium-days').textContent = daysLeft > 0 ? daysLeft : 0;
+          document.getElementById('premium-purchase-date').textContent = purchaseDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          document.getElementById('premium-expiry-date').textContent = expiryDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          document.getElementById('premium-credits-remaining').textContent = `${creditsRemaining}${monthlyCreditLimit > 0 ? ` / ${monthlyCreditLimit}` : ''}`;
+
+          const normalizedPlan = (user.plan || '').toLowerCase();
+          const premiumBenefitsText = document.getElementById('premium-benefits-text');
+          if (premiumBenefitsText) {
+            if (normalizedPlan === 'business') {
+              premiumBenefitsText.textContent = '1000 Credits / Month • Shared Employee Access • Priority Support';
+            } else {
+              premiumBenefitsText.textContent = '100 Credits / Month • All Templates • Priority Support';
+            }
+          }
+
+          document.getElementById('premium-card').classList.remove('hidden');
+        }
+
+        // Download history
+        const historyContainer = document.getElementById('download-history');
+        const noDownloads = document.getElementById('no-downloads');
+        document.getElementById('history-count').textContent = `${downloads.length} ${downloads.length === 1 ? 'Download' : 'Downloads'}`;
+
+        if (downloads.length === 0) {
+          historyContainer.classList.add('hidden');
+          noDownloads.classList.remove('hidden');
+        } else {
+          const sortedDownloads = downloads.sort((a, b) => new Date(b.downloaded_at) - new Date(a.downloaded_at));
+
+          historyContainer.innerHTML = sortedDownloads.map(d => {
+            const date = new Date(d.downloaded_at);
+            const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            const timeStr = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+            const formatColors = {
+              'pdf': 'bg-red-100 text-red-700 border-red-200',
+              'png': 'bg-blue-100 text-blue-700 border-blue-200'
+            };
+            const formatClass = formatColors[d.format?.toLowerCase()] || 'bg-slate-100 text-slate-700 border-slate-200';
+
+            return `
+              <div class="history-item flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:border-blue-300">
+                <div class="flex items-center gap-4 flex-1">
+                  <div class="w-14 h-14 rounded-xl ${d.is_premium ? 'bg-gradient-to-br from-yellow-400 to-orange-500 shadow-lg' : 'bg-gradient-to-br from-blue-500 to-purple-600'} flex items-center justify-center text-white text-2xl">
+                    ${d.is_premium ? '✨' : '📄'}
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-xs font-black uppercase tracking-wider ${d.is_premium ? 'text-orange-600' : 'text-blue-600'} mb-1">${d.bill_type || 'Bill'}</p>
+                    <p class="font-bold text-slate-900 mb-1 text-base">${d.filename || 'Unnamed'}</p>
+                    <p class="text-xs text-slate-500 font-medium">${dateStr} at ${timeStr}</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  ${d.is_premium ? '<span class="text-xs font-black uppercase tracking-wider text-orange-600 px-3 py-1.5 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg border-2 border-orange-300 shadow-sm">⚡ Premium</span>' : ''}
+                  <span class="text-xs font-black uppercase tracking-wider px-3 py-1.5 rounded-lg border ${formatClass}">${(d.format || 'pdf').toUpperCase()}</span>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+
+        // Show content, hide loading
+        clearTimeout(profileBootGuard);
+        document.getElementById('profile-loading').classList.add('hidden');
+        document.getElementById('profile-content').classList.remove('hidden');
+
+      } catch (err) {
+        console.error('Profile load error:', err);
+        clearTimeout(profileBootGuard);
+        document.getElementById('profile-loading').innerHTML = `
+          <div class="text-center py-12">
+            <svg class="w-16 h-16 mx-auto text-red-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-red-500 font-bold mb-4">Failed to load profile</p>
+            <button onclick="location.reload()" class="px-6 py-2 bg-blue-600 text-white rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-blue-700 transition">
+              Retry
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    // Load profile on page load
+    loadProfile();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P5TZMG4');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBillGenerator.com | Sign In</title>
+  <meta name="description"
+    content="Sign in to your eBillGenerator.com account to manage billing templates, downloads, and subscriptions.">
+  <meta name="author" content="eBillGenerator.com">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="application-name" content="eBillGenerator.com">
+  <meta name="apple-mobile-web-app-title" content="eBillGenerator.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="eBillGenerator.com | Sign In">
+  <meta property="og:description" content="Secure login page for eBillGenerator.com users.">
+  <meta property="og:image" content="https://ebillgenerator.com/favicon.svg">
+  <meta property="og:url" content="https://ebillgenerator.com/log_in">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="eBillGenerator.com | Sign In">
+  <meta name="twitter:description" content="Secure login page for eBillGenerator.com users.">
+  <meta name="twitter:image" content="https://ebillgenerator.com/favicon.svg">
+  <link rel="canonical" href="https://ebillgenerator.com/log_in">
+  <link rel="icon" type="image/svg+xml" href="/billgen-watermark.png">
+  <link rel="shortcut icon" href="/billgen-watermark.png">
+  <link rel="apple-touch-icon" href="/billgen-watermark.png">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="/google-auth-config.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 12% 2%, rgba(59, 130, 246, 0.16), transparent 34%),
+        radial-gradient(circle at 88% 8%, rgba(14, 165, 233, 0.14), transparent 36%),
+        linear-gradient(180deg, #f8fbff 0%, #eef6ff 55%, #f8fbff 100%);
+    }
+
+    /* THE DOT PATTERN - Matching the Register page visibility */
+    .bg-pattern {
+      background-image: radial-gradient(#3b82f6 0.8px, transparent 0.8px);
+      background-size: 24px 24px;
+      background-color: #f8fafc;
+    }
+
+    /* --- THE SNAKE BORDER --- */
+    .snake-border-container {
+      position: relative;
+      padding: 1px;
+      border-radius: 2.5rem;
+      overflow: hidden;
+      background: #e2e8f0;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+    }
+
+    .snake-border-container::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: conic-gradient(transparent, transparent, transparent, #3b82f6);
+      animation: rotateLine 4s linear infinite;
+    }
+
+    .snake-border-inner {
+      position: relative;
+      background: white;
+      border-radius: calc(2.5rem - 1px);
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    @keyframes rotateLine {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Google button styling */
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 12px 16px;
+      background: #fff;
+      border: 1px solid #dadce0;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .google-btn:hover {
+      background: #f8f9fa;
+      border-color: #d2e3fc;
+      box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3);
+    }
+
+    .google-btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .google-btn span {
+      font-size: 14px;
+      font-weight: 600;
+      color: #3c4043;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-slate-900 min-h-screen">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P5TZMG4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+ 
+  <div class="flex min-h-screen w-full">
+    <div class="w-full lg:w-1/2 p-8 md:p-14 lg:p-16 flex flex-col justify-center bg-white/95 backdrop-blur-sm">
+      <div class="max-w-md mx-auto w-full">
+        <div class="mb-6">
+          <a href="/"><img src="/billgen-watermark.png" class="h-16 scale-[1.15] md:h-20 origin-left w-auto object-contain"></a>
+        </div>
+
+        <h1 class="text-3xl font-black uppercase tracking-tighter mb-1">Welcome Back</h1>
+        <p class="text-slate-500 text-xs font-medium mb-8">Sign in to your account to continue.</p>
+
+        <!-- Google Sign-In Button -->
+        <div id="googleBtnContainer" class="mb-4 min-h-[44px]"></div>
+
+        <div class="relative flex items-center mb-6">
+          <div class="flex-grow border-t border-slate-100"></div>
+          <span class="flex-shrink mx-3 text-[9px] font-black uppercase tracking-widest text-slate-300">Or Email</span>
+          <div class="flex-grow border-t border-slate-100"></div>
+        </div>
+
+        <form id="loginForm" onsubmit="loginUser(event)" class="space-y-4">
+          <div>
+            <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1.5 block ml-1">Email
+              Address</label>
+            <input type="email" id="loginEmail" required placeholder="name@company.com"
+              class="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all text-xs font-medium text-slate-900">
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center mb-1.5">
+              <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 block ml-1">Password</label>
+              <a href="#" onclick="showForgotPassword(event)"
+                class="text-[9px] font-black uppercase tracking-widest text-blue-600 hover:underline">Forgot?</a>
+            </div>
+            <input type="password" id="loginPassword" required placeholder="••••••••"
+              class="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all text-xs font-medium text-slate-900">
+          </div>
+
+          <div id="loginError" class="hidden text-red-500 text-[10px] font-bold text-center py-1"></div>
+
+          <button type="submit" id="loginBtn"
+            class="w-full bg-blue-600 text-white py-3.5 rounded-xl font-black uppercase text-[11px] tracking-widest hover:bg-blue-700 shadow-lg shadow-blue-500/20 transition-all active:scale-[0.98] mt-2">
+            Sign In
+          </button>
+        </form>
+
+        <p class="text-center mt-8 text-slate-500 text-[10px] font-medium">
+          New to eBillGenerator? <a href="/sign_in" class="text-blue-600 font-bold hover:underline">Create Account</a>
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="hidden lg:flex lg:w-1/2 bg-pattern items-center justify-center relative p-10 lg:p-14 border-l border-slate-100">
+      <div class="w-full max-w-sm">
+        <div class="snake-border-container">
+          <div class="snake-border-inner p-10">
+            <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-1.17-13.69c.307-1.392 1.622-2.432 3.084-2.432 1.487 0 2.842 1.067 3.122 2.504L18.73 13.012c.354 1.815-.384 3.634-1.743 4.671-1.36 1.037-3.111 1.258-4.66.541l-1.581-.792" />
+              </svg>
+            </div>
+
+            <h3 class="text-xl font-black uppercase tracking-tighter text-slate-900 mb-3">Secure Access.</h3>
+            <p class="text-slate-500 text-xs font-medium mb-8 leading-relaxed">Your data is encrypted and protected.
+              Access your templates from any device with total privacy.</p>
+
+            <div class="flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white"></div>
+              </div>
+              <span class="text-[9px] font-black uppercase tracking-widest text-slate-400">Trusted by 2k+ users</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="shared-home-footer"></div>
+  <script>
+    (function injectHomeFooter() {
+      const mount = document.getElementById('shared-home-footer');
+      if (!mount) return;
+      fetch('/index.html', { cache: 'no-store' })
+        .then((res) => res.text())
+        .then((html) => {
+          const match = html.match(/<footer[\s\S]*?<\/footer>/i);
+          if (match) mount.outerHTML = match[0];
+        })
+        .catch((err) => console.error('Failed to load shared footer:', err));
+    })();
+  </script> -->
+
+  <!-- Forgot Password Modal -->
+  <div id="forgotPasswordModal"
+    class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md mx-4 p-8">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-black uppercase tracking-tight">Reset Password</h2>
+        <button onclick="closeForgotPassword()"
+          class="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <p class="text-slate-500 text-xs font-medium mb-6">Enter your email address and we'll help you reset your
+        password.</p>
+
+      <form id="forgotPasswordForm" onsubmit="handleForgotPassword(event)" class="space-y-4">
+        <div>
+          <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1.5 block ml-1">Email
+            Address</label>
+          <input type="email" id="forgotEmail" required placeholder="name@company.com"
+            class="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all text-xs font-medium text-slate-900">
+        </div>
+
+        <div id="forgotMessage" class="hidden text-[10px] font-bold text-center py-2"></div>
+
+        <button type="submit" id="forgotBtn"
+          class="w-full bg-blue-600 text-white py-3.5 rounded-xl font-black uppercase text-[11px] tracking-widest hover:bg-blue-700 shadow-lg shadow-blue-500/20 transition-all active:scale-[0.98]">
+          Reset Password
+        </button>
+
+        <p class="text-center text-[10px] text-slate-400 font-medium">
+          Remember your password? <a href="#" onclick="closeForgotPassword()"
+            class="text-blue-600 font-bold hover:underline">Sign in</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const GOOGLE_CLIENT_ID = window.BillGenGoogleAuth?.clientId || '';
+    const API_BASE_KEY = 'bg_api_base';
+
+    function normalizeApiBase(url) {
+      if (!url) return '';
+      return String(url).trim().replace(/\/+$/, '');
+    }
+
+    function defaultApiBase() { return ""; }
+
+    function getApiBase() {
+      const override = normalizeApiBase(localStorage.getItem(API_BASE_KEY) || '');
+      return override || defaultApiBase();
+    }
+
+    const API_BASE = getApiBase();
+    function apiUrl(path) {
+      return `${API_BASE}${path}`;
+    }
+
+    // Initialize Google Sign-In when page loads
+    window.onload = function () {
+      // Check if already logged in
+      if (localStorage.getItem('billgen_user')) {
+        window.location.replace('/templates');
+        return;
+      }
+
+      initializeGoogleSignIn();
+
+      const tokenFromQuery = new URLSearchParams(window.location.search).get('google_token');
+      if (tokenFromQuery) {
+        handleGoogleToken(tokenFromQuery);
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    };
+
+    function setGoogleButtonBusy(isBusy) {
+      const container = document.getElementById('googleBtnContainer');
+      if (!container) return;
+      container.style.pointerEvents = isBusy ? 'none' : 'auto';
+      container.style.opacity = isBusy ? '0.7' : '1';
+      container.setAttribute('aria-busy', isBusy ? 'true' : 'false');
+    }
+
+    function initializeGoogleSignIn() {
+      const container = document.getElementById('googleBtnContainer');
+      if (!container) return;
+
+      if (!window.BillGenGoogleAuth?.isConfigured()) {
+        showGoogleSetupInstructions('Google client ID is missing.');
+        return;
+      }
+
+      if (typeof google === 'undefined' || !google.accounts?.id) {
+        showGoogleSetupInstructions('Google Identity Services did not load. Refresh and try again.');
+        return;
+      }
+
+      google.accounts.id.initialize({
+        client_id: GOOGLE_CLIENT_ID,
+        callback: handleGoogleCredential,
+        auto_select: false,
+        cancel_on_tap_outside: true,
+        context: 'signin',
+      });
+
+      container.innerHTML = '';
+      google.accounts.id.renderButton(container, {
+        type: 'standard',
+        theme: 'outline',
+        size: 'large',
+        text: 'signin_with',
+        shape: 'rectangular',
+        logo_alignment: 'left',
+        width: String(Math.min(Math.max(Math.round(container.getBoundingClientRect().width || 320), 220), 400)),
+      });
+    }
+
+    function handleGoogleSignIn() {
+      // Check if Google Client ID is configured
+      if (GOOGLE_CLIENT_ID === 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com') {
+        // For demo/development - use popup OAuth flow simulation
+        openGoogleOAuthPopup();
+        return;
+      }
+
+      // Use the real Google Identity Services
+      if (typeof google !== 'undefined') {
+        google.accounts.id.prompt((notification) => {
+          if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+            // Fallback to OAuth popup if One Tap fails
+            openGoogleOAuthPopup();
+          }
+        });
+      } else {
+        openGoogleOAuthPopup();
+      }
+    }
+
+    function openGoogleOAuthPopup() {
+      // This opens the Google OAuth consent screen
+      // For production, you need a real Google Client ID
+
+      const redirectUri = window.location.origin + '/google-callback';
+      const scope = 'email profile openid';
+
+      if (GOOGLE_CLIENT_ID !== 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com') {
+        // Real OAuth flow
+        const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
+          `client_id=${GOOGLE_CLIENT_ID}` +
+          `&redirect_uri=${encodeURIComponent(redirectUri)}` +
+          `&response_type=token` +
+          `&scope=${encodeURIComponent(scope)}` +
+          `&prompt=select_account`;
+
+        const width = 500;
+        const height = 600;
+        const left = (window.innerWidth - width) / 2 + window.screenX;
+        const top = (window.innerHeight - height) / 2 + window.screenY;
+
+        const popup = window.open(
+          authUrl,
+          'Google Sign In',
+          `width=${width},height=${height},left=${left},top=${top},menubar=no,toolbar=no`
+        );
+
+        if (!popup) {
+          const errEl = document.getElementById('loginError');
+          errEl.textContent = 'Popup blocked. Please allow popups for Google sign-in.';
+          errEl.classList.remove('hidden');
+          return;
+        }
+
+        // Listen for callback from popup
+        window.addEventListener('message', async function handler(event) {
+          if (event.origin !== window.location.origin) return;
+          if (!event.data.googleToken) return;
+
+          window.removeEventListener('message', handler);
+          await handleGoogleToken(event.data.googleToken);
+        });
+      } else {
+        // Demo mode - show instructions
+        showGoogleSetupInstructions();
+      }
+    }
+
+    function showGoogleSetupInstructions(message) {
+      const errEl = document.getElementById('loginError');
+      errEl.innerHTML = `
+      <div style="text-align:left; background:#fef3c7; padding:12px; border-radius:8px; border:1px solid #f59e0b;">
+        <strong style="color:#92400e;">⚠️ Google Sign-In Setup Required</strong><br><br>
+        <span style="color:#78350f; font-size:9px;">
+        To enable Google Sign-In:<br>
+        1. Go to <a href="https://console.cloud.google.com" target="_blank" style="color:#2563eb;text-decoration:underline;">Google Cloud Console</a><br>
+        2. Create a project & enable "Google+ API"<br>
+        3. Go to Credentials → Create OAuth Client ID<br>
+        4. Add your domain to Authorized Origins<br>
+        5. Copy Client ID to log_in and sign_in pages<br><br>
+        For now, use email/password to sign in.
+        </span>
+      </div>
+    `;
+      errEl.classList.remove('hidden');
+    }
+
+    async function handleGoogleCredential(response) {
+      try {
+        const payload = window.BillGenGoogleAuth.decodeCredentialPayload(response.credential);
+
+        await sendGoogleAuthToServer({
+          email: payload.email,
+          first_name: payload.given_name || payload.name?.split(' ')[0] || '',
+          last_name: payload.family_name || payload.name?.split(' ').slice(1).join(' ') || '',
+          picture: payload.picture || '',
+          google_id: payload.sub
+        });
+      } catch (err) {
+        console.error('Google credential decode error:', err);
+        const errEl = document.getElementById('loginError');
+        errEl.textContent = 'Google sign-in could not be completed. Please try again.';
+        errEl.classList.remove('hidden');
+      }
+    }
+
+    async function handleGoogleToken(accessToken) {
+      // Fetch user info from Google using the access token
+      try {
+        const res = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+          headers: { Authorization: `Bearer ${accessToken}` }
+        });
+        const userInfo = await res.json();
+
+        await sendGoogleAuthToServer({
+          email: userInfo.email,
+          first_name: userInfo.given_name || '',
+          last_name: userInfo.family_name || '',
+          picture: userInfo.picture || '',
+          google_id: userInfo.sub
+        });
+      } catch (err) {
+        const errEl = document.getElementById('loginError');
+        errEl.textContent = 'Failed to get Google user info';
+        errEl.classList.remove('hidden');
+      }
+    }
+
+    async function sendGoogleAuthToServer(userData) {
+      const errEl = document.getElementById('loginError');
+      errEl.classList.add('hidden');
+      setGoogleButtonBusy(true);
+
+      try {
+        const res = await fetch(apiUrl('/api/auth/google'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(userData),
+        });
+
+        const result = await res.json();
+
+        if (res.ok && result.user) {
+          localStorage.setItem('billgen_user', JSON.stringify(result.user));
+          // Force redirect with fallback
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 100);
+          window.location.replace('/');
+          return;
+        } else {
+          errEl.textContent = result.error || 'Google sign-in failed';
+          errEl.classList.remove('hidden');
+        }
+      } catch (err) {
+        console.error('Google auth error:', err);
+        errEl.textContent = 'Server not reachable. Make sure npm run server is running.';
+        errEl.classList.remove('hidden');
+      } finally {
+        setGoogleButtonBusy(false);
+      }
+    }
+
+    async function loginUser(e) {
+      e.preventDefault();
+      const btn = document.getElementById('loginBtn');
+      const errEl = document.getElementById('loginError');
+      errEl.classList.add('hidden');
+      btn.textContent = 'Signing In...';
+      btn.disabled = true;
+
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+
+      try {
+        const res = await fetch(apiUrl('/api/auth/login'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+        const result = await res.json();
+
+        if (res.ok && result.user) {
+          localStorage.setItem('billgen_user', JSON.stringify(result.user));
+          // Force redirect with multiple fallbacks
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 100);
+          window.location.replace('/');
+          return;
+        } else {
+          errEl.textContent = result.error || 'Invalid email or password';
+          errEl.classList.remove('hidden');
+          btn.textContent = 'Sign In';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        console.error('Login error:', err);
+        errEl.textContent = 'Server not reachable. Make sure npm run server is running.';
+        errEl.classList.remove('hidden');
+        btn.textContent = 'Sign In';
+        btn.disabled = false;
+      }
+    }
+
+    // ─── Forgot Password Functions ───
+    function showForgotPassword(e) {
+      e.preventDefault();
+      document.getElementById('forgotPasswordModal').classList.remove('hidden');
+      document.getElementById('forgotEmail').value = '';
+      document.getElementById('forgotMessage').classList.add('hidden');
+    }
+
+    function closeForgotPassword() {
+      document.getElementById('forgotPasswordModal').classList.add('hidden');
+    }
+
+    async function handleForgotPassword(e) {
+      e.preventDefault();
+      const btn = document.getElementById('forgotBtn');
+      const msgEl = document.getElementById('forgotMessage');
+      msgEl.classList.add('hidden');
+      btn.textContent = 'Processing...';
+      btn.disabled = true;
+
+      const email = document.getElementById('forgotEmail').value.trim();
+
+      try {
+        const res = await fetch(apiUrl('/api/auth/forgot-password'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+          msgEl.textContent = '✓ Check your email for reset instructions!';
+          msgEl.className = 'text-green-600 text-[10px] font-bold text-center py-2';
+          msgEl.classList.remove('hidden');
+
+          // Auto-close after 3 seconds
+          setTimeout(() => {
+            closeForgotPassword();
+          }, 3000);
+        } else {
+          msgEl.textContent = result.error || 'Failed to send reset email';
+          msgEl.className = 'text-red-500 text-[10px] font-bold text-center py-2';
+          msgEl.classList.remove('hidden');
+        }
+      } catch (err) {
+        msgEl.textContent = 'Server not reachable';
+        msgEl.className = 'text-red-500 text-[10px] font-bold text-center py-2';
+        msgEl.classList.remove('hidden');
+      } finally {
+        btn.textContent = 'Reset Password';
+        btn.disabled = false;
+      }
+    }
+  </script>
+
+</body>
+
+</html>
+
+
+

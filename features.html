@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P5TZMG4');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing Features &amp; Templates | eBillGenerator</title>
+  <meta name="description" content="Explore advanced features of eBillGenerator. Dynamic GST calculation, professional invoice layouts, instant PDF downloads, and secure local data handling.">
+  <meta name="keywords" content="bill generator features, receipt templates, invoice automation, billing software">
+  <meta name="author" content="eBillGenerator.com">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="application-name" content="eBillGenerator.com">
+  <meta name="apple-mobile-web-app-title" content="eBillGenerator.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Billing Features &amp; Templates | eBillGenerator">
+  <meta property="og:description" content="Explore advanced features of eBillGenerator. Dynamic GST calculation, professional invoice layouts, instant PDF downloads, and secure local data handling.">
+  <meta property="og:image" content="https://www.ebillgenerator.com/billgen-watermark.png">
+  <meta property="og:url" content="https://www.ebillgenerator.com/features.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Billing Features &amp; Templates | eBillGenerator">
+  <meta name="twitter:description" content="Explore advanced features of eBillGenerator. Dynamic GST calculation, professional invoice layouts, instant PDF downloads, and secure local data handling.">
+  <meta name="twitter:image" content="https://www.ebillgenerator.com/billgen-watermark.png">
+  <link rel="canonical" href="https://www.ebillgenerator.com/features.html">
+  <link rel="icon" type="image/svg+xml" href="/billgen-watermark.png">
+  <link rel="shortcut icon" href="/billgen-watermark.png">
+  <link rel="apple-touch-icon" href="/billgen-watermark.png">
+  
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          animation: { 
+            'marquee': 'marquee 35s linear infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'float': 'float 3s ease-in-out infinite'
+          },
+          keyframes: { 
+            marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+            fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
+          }
+        }
+      }
+    }
+  
+function openTemplatePageById(billId) {
+  window.location.href = '/templates?bill=' + encodeURIComponent(billId);
+}
+</script>
+
+  <style type="text/css">
+    body {
+      transition: background-color 0.3s ease;
+      scroll-behavior: smooth;
+      position: relative;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(59, 130, 246, 0.15), transparent 34%),
+        radial-gradient(circle at 90% 8%, rgba(14, 165, 233, 0.12), transparent 36%),
+        linear-gradient(180deg, #f8fbff 0%, #eff6ff 52%, #f8fbff 100%);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      opacity: 0.45;
+      z-index: 0;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card {
+      border: 1px solid #d3e1f7;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(244, 250, 255, 0.9) 100%);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: #93c5fd;
+      box-shadow: 0 24px 46px rgba(30, 64, 175, 0.14);
+    }
+
+    .bg-dot-pattern {
+      background-image: radial-gradient(rgba(59, 130, 246, 0.16) 0.8px, transparent 0.8px);
+      background-size: 24px 24px;
+    }
+    
+    /* Animation class for scroll trigger */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    
+    /* Print optimizations */
+    @media print {
+      .no-print { display: none !important; }
+      #modal-overlay { position: absolute !important; background: white !important; display: block !important; top: 0; left: 0; }
+      .modal-container { box-shadow: none !important; border: none !important; width: 100% !important; max-width: none !important; }
+      .input-side { display: none !important; }
+      .preview-side { width: 100% !important; padding: 0 !important; }
+      #printable-bill { border: 1px solid #eee !important; margin: 0 auto !important; box-shadow: none !important; width: 380px !important; }
+    }
+
+     #bgnav-placeholder {
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Higher than the hero's 10 */
+}
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white font-sans min-h-screen">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P5TZMG4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="bgnav-placeholder"></div>
+
+<script type="module" src="/src/init-nav.js"></script>
+  <script>
+    // Replaced imports
+    (function wn(){if(window.BillGenNav){window.BillGenNav.init({activePage:'features'})}else{setTimeout(wn,50)}})();
+  </script>
+
+<header id="hero" class="relative pt-24 pb-28 px-6 bg-dot-pattern">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <!-- <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full mb-8">
+                <span class="text-[10px] font-black uppercase tracking-widest text-blue-600">Version 2.0 Live</span>
+            </div> -->
+            <h1 class="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-6 leading-[0.9] text-slate-900">
+                Professional Billing <br><span class="text-blue-600">Simplified.</span>
+            </h1>
+            <p class="text-slate-500 max-w-2xl mx-auto text-lg md:text-xl font-medium mb-12">
+                Generate GST invoices, fuel bills, and rent receipts in seconds with our beautiful, light-weight interface.
+            </p>
+            <div class="flex justify-center gap-4">
+              <button class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold uppercase text-[12px] tracking-widest hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20">Start Generating</button>
+              <button class="bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-2xl font-bold uppercase text-[12px] tracking-widest hover:bg-blue-50 transition-all">View Demo</button>
+            </div>
+        </div>
+    </header>
+
+        <section id="core" class="py-24 md:py-28 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <div class="md:col-span-7 feature-card p-10 md:p-14 rounded-[3rem] relative overflow-hidden group">
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-blue-500/20">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 text-slate-900">Dynamic Live Preview</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-xs">See changes as you type. Our real-time engine renders your bill instantly, ensuring what you see is what you print.</p>
+                </div>
+                <div class="absolute right-[-20px] bottom-[-20px] w-64 h-64 bg-blue-50 rounded-full group-hover:scale-110 transition-transform duration-700"></div>
+            </div>
+
+            <div class="md:col-span-5 bg-blue-600 p-10 md:p-14 rounded-[3rem] text-white shadow-2xl shadow-blue-500/20 flex flex-col justify-between hover:scale-[1.02] transition-transform">
+                <h4 class="text-3xl font-black uppercase tracking-tighter leading-none mb-6">10+ Professional <br>Templates</h4>
+                <p class="text-blue-100 text-sm mb-8">From GST Invoices to Medical Bills, every template is crafted for compliance and professional look.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-white/10 px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest">GST</span>
+                    <span class="bg-white/10 px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest">Fuel</span>
+                    <span class="bg-white/10 px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest">Rent</span>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 feature-card p-10 rounded-[3rem]">
+                <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <h4 class="text-xl font-black uppercase tracking-tighter mb-3">Privacy First</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Local-only processing. Your business data never touches our servers. Safe, secure, and private.</p>
+            </div>
+
+            <div class="md:col-span-4 feature-card p-10 rounded-[3rem]">
+                <div class="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <h4 class="text-xl font-black uppercase tracking-tighter mb-3">Vector PDFs</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Crisp, high-resolution PDF exports that look perfect on any screen or paper size.</p>
+            </div>
+
+            <div class="md:col-span-4 feature-card p-10 rounded-[3rem]">
+              <div class="w-10 h-10 bg-cyan-50 text-cyan-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V5a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                <h4 class="text-xl font-black uppercase tracking-tighter mb-3">Multi-Currency</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Switch between global currencies instantly with localized number formatting (INR, USD, EUR).</p>
+            </div>
+        </div>
+    </section>
+
+  
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-20 pb-8">
+  <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
+
+        <div class="space-y-6">
+          <img src="/billgen-watermark.png" class="h-16 scale-[1.15] md:h-20 origin-left w-auto object-contain">
+          <p class="text-slate-500 text-xs leading-relaxed font-medium">
+            For educational/personal use only. Illegal use or fraud is strictly prohibited. Users assume all legal
+            responsibility; developers are not liable for any misuse. </p>
+          <div class="flex items-center gap-2">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span class="text-[9px] font-black uppercase tracking-widest text-slate-400">Systems Operational</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900 dark:text-white">Product</h4>
+          <ul class="space-y-4">
+            <li><a href="/templates?bill=fuel"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Fuel
+                Generator</a></li>
+            <li><a href="/templates?bill=rent"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Rent
+                Receipts</a></li>
+            <li><a href="/templates?bill=lta"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">LTA
+                Templates</a></li>
+            <li><a href="/templates?bill=invoice"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Custom
+                GST Invoice</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900 dark:text-white">Company</h4>
+          <ul class="space-y-4">
+            <li><a href="about.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">About
+                Us</a></li>
+            <li><a href="privacypolicy.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Privacy
+                Policy</a></li>
+            <li><a href="termsofuse.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Terms
+                of Use</a></li>
+            <li><a href="refundpolicy.html"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight">Refund
+                Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900 dark:text-white">Contact</h4>
+          <ul class="space-y-4">
+            <li><a href="mailto:info@ebillgenerator.com"
+                class="text-[11px] font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-tight flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                info@ebillgenerator.com
+              </a></li>
+            <li><span class="text-[11px] font-bold text-slate-400 uppercase tracking-tight">Support: 24/7</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-slate-900 dark:text-white">Newsletter</h4>
+          <p class="text-[10px] text-slate-500 mb-4 font-medium uppercase tracking-tighter">Get product updates & new
+            templates.</p>
+          <div class="flex gap-2">
+            <input type="email" placeholder="EMAIL"
+              class="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2 text-[10px] focus:outline-none focus:ring-2 ring-blue-500 w-full font-bold">
+            <button
+              class="bg-blue-600 text-white p-2 rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div
+        class="pt-8 border-t border-slate-100 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+          © 2026 eBillGenerator.com • All Rights Reserved
+        </p>
+
+        <div class="flex gap-6">
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition hover:scale-110">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+            </svg>
+          </a>
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition hover:scale-110">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+            </svg>
+          </a>
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition hover:scale-110">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059 1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  (function checkAuth() {
+    const user = JSON.parse(localStorage.getItem('billgen_user') || 'null');
+    if (user) {
+      document.getElementById('signInBtn').classList.add('hidden');
+      const userNav = document.getElementById('userInfoNav');
+      userNav.classList.remove('hidden');
+      userNav.classList.add('flex');
+      document.getElementById('navUserName').textContent = `${user.first_name || ''} ${user.last_name || ''}`.trim() || user.email || 'User';
+    }
+  })();
+
+  async function logoutUser() {
+    const user = JSON.parse(localStorage.getItem('billgen_user') || 'null');
+    if (user?.id) {
+      try {
+        await fetch('/api/auth/logout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId: user.id })
+        });
+      } catch (e) {}
+    }
+    localStorage.removeItem('billgen_user');
+    location.reload();
+  }
+</script>
+
+</body>
+</html>
+
+
